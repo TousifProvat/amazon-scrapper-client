@@ -33,13 +33,13 @@ function App() {
       </h1>
       <div className='w-full bg-white shadow-sm flex justify-center overflow-hidden rounded-md'>
         <input
-          className='h-10 w-full px-3'
+          className='h-10 w-full px-3 outline-none border-2 focus:border-blue-300 rounded-md border-r-0 rounded-r-none'
           placeholder='Product Name'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
-          className='bg-blue-400 px-2 rounded-md text-white text-sm disabled:bg-blue-100'
+          className='bg-blue-400 px-2 rounded-md text-white text-sm disabled:bg-blue-100 -ml-1'
           onClick={() => onSearch(search)}
           disabled={loading}
         >
@@ -57,10 +57,10 @@ function App() {
           <p className='ml-2'>scrapping...</p>
         </div>
       )}
-      <div className='products my-4 grid grid-cols-3 gap-4'>
+      <div className='products my-4 grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4'>
         {!loading &&
           products.map((product, index) => (
-            <div className='bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700'>
+            <div className='w-[100%] bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mx-auto sm:mx-0 dark:bg-gray-800 dark:border-gray-700'>
               <img
                 className='rounded-t-lg mx-auto'
                 src={product.image}
