@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const BASE_URL =
-    `http://localhost:5000/scrap/amazon?product=` || import.meta.VITE_BASE_URL;
+    import.meta.VITE_BASE_URL || `http://localhost:5000/scrap/amazon?product=`;
 
   const onSearch = async (search) => {
     if (!search || !search.trim()) return;
